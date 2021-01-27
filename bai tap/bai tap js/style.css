@@ -1,0 +1,17 @@
+.container1{
+    display: grid !important; 
+    grid-template-columns: repeat(20,27px) !important;
+    grid-template-rows: repeat(20,27px) !important;
+    text-align: center;
+    border: 1px solid black;
+}
+.vd {
+    
+    display: flex;
+    justify-content: center;
+}
+#header {
+    
+    display: flex;
+    justify-content: center;
+}

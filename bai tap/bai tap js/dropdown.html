@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <style>
+          #dropdown {
+  width: 200px
+}
+#dropdown li{
+  list-style:none;
+  line-height: 30px;
+  background: blue;
+  margin: 2px;
+}
+ 
+#dropdown li a{
+  margin-left: 10px;
+  color: #FFF;
+  text-decoration: none;
+}
+ 
+#dropdown ul{
+  display:none;
+  padding: 0px;
+  background: pink
+}
+ 
+#dropdown ul li{
+  background-color: pink
+}
+      </style>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <ul id="dropdown">
+        <li><a href="#">Trang chủ</a></li>
+        <li>
+            <a href="#">Sản phẩm</a>
+            <ul>
+                <li><a href="#">Gạch cao cấp</a></li>
+                <li><a href="#">Gạch thủ công</a></li>
+                <li><a href="#">Gạch hoa văn</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Tin tức</a>
+            <ul>
+                <li><a href="#">Tin công nghệ</a></li>
+                <li><a href="#">Tin trong nước</a></li>
+                <li><a href="#">Tin thời sự</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Dịch vụ</a>
+            <ul>
+                <li><a href="#">Thiết kế web</a></li>
+                <li><a href="#">Quảng cáo web</a></li>
+                <li><a href="#">Thiết kế đồ họa</a></li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+
+
+
+        var menu = document.querySelectorAll("#dropdown > li")
+        for (var i =0;i<menu.length;i++ ){
+            var flag = true;
+        onOff= function(){
+            if(flag == true){
+                flag = false;
+
+            }
+            else{
+                flag= true;
+            }
+
+        }
+            
+            
+               
+
+            menu[i].addEventListener('click', function(){
+                
+                var menulist = document.querySelectorAll('#dropdown > li > ul');
+                for (var j=0; j<menulist.length; j++){
+                    menulist[j].style.display="none";
+                }
+               
+                if(flag) {
+                    this.children[1].style.display="block"
+                    onOff();
+                    
+                }
+
+                
+                
+                else {
+                    this.children[1].style.display="none"
+                    onOff(); 
+                    
+                }
+
+                console.log(this.children[1].style.display);
+                
+                
+
+
+
+
+            })
+
+            }
+        
+    </script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

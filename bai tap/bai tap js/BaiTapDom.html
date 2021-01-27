@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="bootstrap.css">
+    <title>Tìm kiếm - freetuts.net</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        #search_advance {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var flag = true;
+        function onOff() {
+            if (flag == true) {
+                flag = false;
+            }
+            else {
+                flag = true;
+            }
+
+        }
+
+
+
+    </script>
+
+
+<div class=" text-center mt-5" > 
+    <h1 class=" btn btn-primary text-light">Tìm kiếm dữ liệu</h1>
+       <table border="1" cellspacing="0" cellpadding="5" class="text-center" style="margin-left: 40%;">
+        <tr>
+            <td class="bg-danger text-light">Nhập tiêu đề</td>
+            <td class="bg-success text-light">
+                <input type="text" id="title" value="" class="" /> <br />
+                <a href="#" id="show_search_advance" class="text-warning">Tìm kiếm nâng cao</a>
+            </td>
+        </tr>
+        <tr id="search_advance">
+            <td class="text-warning bg-secondary">Chọn chuyên mục</td>
+            <td>
+                <select id="category" class="bg-danger">
+                    <option value="1">PHP</option>
+                    <option value="2">Javascript</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="bg-dark"></td>
+            <td class="bg-primary">
+                <input type="button" id="btn_search" value="Tìm kiếm" class="btn btn-light"/>
+            </td>
+        </tr>
+    </table>
+</div>
+    <script>
+
+        function thayND2() {
+            var category = document.getElementById('search_advance');
+            category.style.display = "table-row";
+            document.getElementById('show_search_advance').innerHTML = "Bo tim kiem nang cao"
+        }
+        function thayND1() {
+            var category = document.getElementById('search_advance');
+            category.style.display = "none";
+            
+            document.getElementById('show_search_advance').innerHTML = "Tim kiem nang cao"
+        }
+        function fun1() {
+            onOff();
+            if (flag) {
+                thayND1();
+
+
+            }
+            else {
+                thayND2();
+            }
+        }
+
+
+        var chon = document.getElementById('show_search_advance')
+        chon.addEventListener('click', fun1)
+
+    </script>
+
+
+
+</body>
+
+</html>

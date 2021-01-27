@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ham kiem tra so nguyen to
+        function checkSNT(n){
+            var flag = true;
+            if(n<2){
+                flag = false;
+            }
+            else{
+                for(var i =2 ; i<n ;i++){
+                    if( n%i == 0){
+                        flag = false; break;
+                    }
+
+                }
+            }
+            return flag;
+        }
+
+
+        // ham tao chuoi so nguyen to den n
+        function result(){
+            var n = laySo(); console.log(n);
+            
+            var ketQua = "";
+            for(var i =1 ;i<=n; i++){
+                var m = checkSNT(i);
+                if(m==true){
+                    ketQua += i + '<br/> <br/>';  
+
+                }
+
+            }
+            
+            document.getElementById('tittle').innerHTML = "Chuoi so tu 1 den "+ n;
+            document.getElementById("ketQua").innerHTML = ketQua;
+            document.getElementById('end').innerHTML = "--- END ---"
+        }
+
+
+
+
+            // var n = laySo();
+            // var html = '';
+            // for(i=1; i<= n; i++){
+            //     html += i + '<br/> <br/>';
+
+
+            // }
+            
+
+        
+
+        function laySo(){
+            var number = document.getElementById('number').value;
+            number = parseInt(number);
+            return number;
+        }
+
+
+    </script>
+    <div>
+        <h2 class="text-center mt-5 text-danger">Hay Nhap So Nguyen Ngau Nhien Vao O Trong</h2>
+
+    </div>
+
+
+    <div class="row  text-center pt-5 " style="margin-left: 40%;">
+        <input type="number" id="number" value="" class="form-control col-sm-3 bg-warning text-light">
+        <input type="button" id="run" value="run" class="ml-1 bg-danger form-control col-lg-1 text-light">
+
+    </div>
+    <hr class="bg-danger">
+    <div class=""><h2 class="text-center text-success " id="tittle"></h2></div>
+    <p id="ketQua" class="h1 alert-link text-center h2 mt-5 text-primary bg-info form-control col-sm-3 text-light" style="margin-left: 37.5%;"></p>
+    <div class=""><h2 class="text-center text-success " id="end"></h2></div>
+    
+
+    <script>
+        var run = document.getElementById('run');
+        run.addEventListener('click',result)
+    </script>
+
+
+
+
+
+</body>
+</html>

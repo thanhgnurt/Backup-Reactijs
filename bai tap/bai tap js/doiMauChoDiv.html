@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+</head>
+
+<body>
+
+
+    <script>
+        var flag = true;
+        function onOff() {
+            if (flag == true) {
+                flag = false;
+            }
+            else {
+                flag = true;
+            }
+
+        }
+
+
+
+
+
+        var div = document.getElementsByTagName('div')
+        function change() {
+            onOff();
+            if (flag) {
+                for (let i = 0; i < div.length; i++) {
+                    if ((i + 1) % 2 == 0) {
+                        div[i].style.background = "red";
+
+                    }
+                    else {
+                        div[i].style.background = "blue"
+                    }
+
+                }
+            }
+            else {
+
+                for (let i = 0; i < div.length; i++) {
+                    if ((i + 1) % 2 == 0) {
+                        div[i].style.background = "blue";
+
+                    }
+                    else {
+                        div[i].style.background = "red"
+                    }
+
+                }
+
+            }
+        }
+    </script>
+    <div class="text-center">
+        <div class="">Thẻ thứ 1</div>
+        <div class="">Thẻ thứ 1</div>
+        <div class="">Thẻ thứ 1</div>
+        <div class="">Thẻ thứ 1</div>
+        <div class="">Thẻ thứ 1</div>
+        <div class="">Thẻ thứ 1</div>
+        <div class="">Thẻ thứ 1</div>
+        <div class="">Thẻ thứ 1</div>
+        <div class="">Thẻ thứ 1</div>
+        <div class="">Thẻ thứ 1</div>
+    </div>
+   
+        <input type="button" id="change" value="Change Color" class=" text-center bg-danger mt-5 form-control col-sm-3 ml-5">
+   
+
+    <script>
+
+        var button = document.getElementById('change');
+        button.addEventListener("click", change)
+
+        document.getElementsByTagName('div').style.cssName="mt-5"
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

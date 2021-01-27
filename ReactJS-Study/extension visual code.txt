@@ -1,0 +1,11 @@
+1 auto rename tag
+2 bootstrap 4
+3 color info
+4 css peek
+5 es7 react/redux/
+6 eslint
+7 github
+8 gitlen
+9 html to jsx
+10 live server
+11 prettier - code format

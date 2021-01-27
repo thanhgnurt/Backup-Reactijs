@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="text-center mt-5">
+          <input type="number" placeholder="nhap vao so nguyen" id="number" class="">
+          <input type="button" value="save" id="save" class="bg-primary mx-2">
+          <input type="button" value="end" id="end" class="bg-danger">
+      </div>
+      <div class="text-center mt-5"> 
+          <h2>Gia tri min</h2>
+          <div id="min" class="h2 text-danger"></div>
+      </div>
+      <div class="text-center mt-5"> 
+        <h2>Gia tri max</h2>
+        <div id="max" class="h2 text-danger"></div>
+    </div>
+
+      <script>
+          var mang = [];
+          var end = document.getElementById('end')
+          end.addEventListener('click',sosanh)
+          
+          var save = document.getElementById('save')
+          save.addEventListener("click",luumang )
+
+
+          function luumang(){
+              var number = parseInt( document.getElementById('number').value)
+              mang.push(number);
+              document.getElementById('number').value=""             
+              
+          }
+          var max, min;
+
+          function sosanh(){
+              for (var i=0; i<mang.length; i++){
+                  max = mang[0];
+                  min = mang[0]
+                  
+                  if (max<mang[i]){
+                      max = mang[i]
+
+                  }
+                  if (min>mang[i]){
+                      min = mang[i]
+
+                  }
+                  document.getElementById('min').innerHTML= min
+                  document.getElementById('max').innerHTML=max
+
+              }
+
+          }
+
+
+
+          
+          
+
+
+
+
+      </script>
+
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
